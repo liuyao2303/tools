@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis">
+
+	<insert id="insert">
+		insert into forum (id,username) values(12,"sdasdad")
+	</insert>
+
+	<insert id="insert_test2">
+		insert into forum (username) values("sdasdad")
+	</insert>
+	
+	<select id="selectCount" parameterType="com.liuyao.test.ForeumDmo" resultType="Long">
+		SELECT 
+			count(*)
+		FROM 
+			forum 
+		WHERE 
+			(username = #{liuyao})
+	</select>
+	
+	<select id="selectList" resultType="com.liuyao.test.ForeumDmo" parameterType="String">
+		SELECT 
+			id as id, 
+			city as city, 
+			create_time as 
+			createTime, 
+			content as content, 
+			username as username, 
+			topic_title as topicTitle 
+		FROM 
+			forum 
+		WHERE 
+			(username = #{liuyao})
+	</select>
+	
+</mapper>
