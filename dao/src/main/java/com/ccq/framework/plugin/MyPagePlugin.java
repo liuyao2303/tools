@@ -17,7 +17,7 @@ import org.apache.ibatis.session.RowBounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Intercepts({@Signature(type = StatementHandler.class,method = "prepare",args = {java.sql.Connection.class})})
+@Intercepts({@Signature(type = StatementHandler.class,method = "prepare",args = {java.sql.Connection.class,Integer.class})})
 public class MyPagePlugin implements Interceptor{
 
 	private Dialect dialect;
