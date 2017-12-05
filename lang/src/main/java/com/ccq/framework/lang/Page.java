@@ -13,11 +13,22 @@ public class Page implements Serializable{
 	private int pages;
 	private int pageNum;
 	private int pageSize;
-	
+
+	/**
+	 * 根据当前分页和分页大小，构造对象
+	 * @param pageNum
+	 * @param pageSize
+	 * @return
+	 */
+	public static Page getPage(int pageNum,int pageSize) {
+		return  new Page(0,pageNum,pageSize);
+	}
+
 	public Page() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
 	public Page(int pages, int pageNum, int pageSize) {
 		super();
 		this.pages = pages;

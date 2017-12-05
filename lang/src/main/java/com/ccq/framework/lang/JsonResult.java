@@ -15,7 +15,7 @@ public class JsonResult implements Serializable{
 	private String code;
 	private Object object;
 	private String serviceCode;
-	
+	private Page page;
 	
 	public JsonResult() {
 		super();
@@ -121,7 +121,15 @@ public class JsonResult implements Serializable{
 		return new JsonResult(true,message);
 	}
 
-	public boolean isSuccess() {
+    public Page getPage() {
+        return page;
+    }
+
+    public void setPage(Page page) {
+        this.page = page;
+    }
+
+    public boolean isSuccess() {
 		return success;
 	}
 	public void setSuccess(boolean success) {
